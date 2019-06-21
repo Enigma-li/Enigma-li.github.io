@@ -173,7 +173,7 @@
                     <td align="center"><img src="src\overview.png" width="75%" alt="Paper teaser" /></td>
                 </tr>
                 <tr>
-                    <td align="left" style="font-size:75%">
+                    <td align="justify" style="font-size:75%">
                         An example of tooth segmentation and tooth identification. The first column shows a CBCT scan in the axis view, the second column shows its segmentation results, and the last column shows the 3D segmentation results with different colors for different teeth respectively.
                     </td>
                 </tr>
@@ -181,7 +181,7 @@
                     <td align="left" style="font-size:100%"><strong>Abstract</strong></td>
                 </tr>
                 <tr>
-                    <td align="left" style="font-size:75%">
+                    <td align="justify" style="font-size:75%">
                         This paper proposes a method that uses deep convolutional neural networks to achieve automatic and accurate tooth instance segmentation and identification from CBCT (cone beam CT) images for digital dentistry. The core of our method is a two-stage network. In the first stage, an edge map is extracted from the input CBCT image to enhance image contrast along shape boundaries. Then this edge map and the input images are passed to the second stage. In the second stage, we build our network upon the 3D region proposal network (RPN) with a novel learnedsimilarity matrix to help efficiently remove redundant proposals, speed up training and save GPU memory. To resolve the ambiguity in the identification task, we encode teeth spatial relationships as an additional feature input in the identification task, which helps to remarkably improve the identification accuracy. Our evaluation, comparison and comprehensive ablation studies demonstrate that our method produces accurate instance segmentation and identification results automatically and outperforms the state-of-the-art approaches. To the best of our knowledge, our method is the first to use neural networks to achieve automatic tooth segmentation and identification from CBCT images.                    </td>
                 </tr>
                 <!--<tr>
@@ -193,7 +193,7 @@
                             <tr>
                                 <td><img src="src\toothNet_paper_thumbnail.jpg" width="220"/></td>
                                 <td>&nbsp;</td>
-                                <td style="font-size:75%">
+                                <td align="justify" style="font-size:75%">
                                     <strong>Paper</strong> [<a href="paper\toothNet_CVPR2019.pdf">PDF</a>] <br/><br />
                                     <strong>Code and Data</strong> [<a href="">Comming Soon...</a>] <br /><br />
                                     <strong>Citation:</strong><br>Zhiming Cui,  Changjian Li, and  Wenping Wang, “ToothNet: Automatic Tooth Instance Segmentation and Identification from Cone Beam CT Images,” in The IEEE Conference on Computer Vision and Pattern Recognition (CVPR), June 2019</br><a href="./toothNet.bib">(bibtex)</a>
@@ -212,7 +212,7 @@
                     <td><img src="src\pipeline.png" width="100%" /></td>
                 </tr>
                 <tr>
-                    <td align="left" style="font-size:75%">
+                    <td align="justify" style="font-size:75%">
                         Our two-stage network architecture for tooth instance segmentation and identification. Given CBCT images, we first pass them
 						to the edge map extraction network in stage one, where the deep supervised scheme is used. Then the detected edge map and the original
 						CBCT images are sent to the region proposal network with a novel similarity matrix. Four individual branches are followed for tooth
@@ -230,7 +230,7 @@
                     <td><img src="src\result_gallery.png" width="100%" /></td>
                 </tr>
 				<tr>
-                    <td style="font-size:75%">
+                    <td align="justify" style="font-size:75%">
                         The results gallery of the tooth segmentation and identification. Different CT scans with segmentation results are shown in the first column, and the reconstructed 3D teeth models from three different views are shown in the following three columns. The numbers illustrate the scan indices and different colors illustrate different teeth. In addition, the second example contains a removed molar tooth, whose position is marked by the red dashed box.</td>
                 </tr>
                 <tr>
