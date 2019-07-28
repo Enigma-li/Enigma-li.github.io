@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- TemplateBeginEditable name="doctitle" -->
-    <title>ToothNet: Automatic Tooth Instance Segmentation and Identification from Cone Beam CT Images</title>
+    <title>Floorplan-Jigsaw: Jointly Estimating Scene Layout and Aligning Partial Scans</title>
     <!-- TemplateEndEditable -->
     <!-- TemplateBeginEditable name="head" -->
     <!-- TemplateEndEditable -->
@@ -155,26 +155,26 @@
         <div class="content">
             <table width="80%" align="center" cellspacing="10">
                 <tr>
-                    <td align="center" style="font-size:120%"><strong>ToothNet: Automatic Tooth Instance Segmentation and Identification from Cone Beam CT Images</strong></td>
+                    <td align="center" style="font-size:120%"><strong>Floorplan-Jigsaw: Jointly Estimating Scene Layout and Aligning Partial Scans</strong></td>
                 </tr>
                 <tr>
-                    <td align="center" style="font-size:90%">Zhiming Cui, <a href="https://enigma-li.github.io/" style="text-decoration:none;">Changjian Li</a>, <a href="http://i.cs.hku.hk/~wenping/" style="text-decoration:none;">Wenping Wang</a></td>
+                    <td align="center" style="font-size:90%">Cheng Lin, <a href="https://enigma-li.github.io/" style="text-decoration:none;">Changjian Li</a>, <a href="http://i.cs.hku.hk/~wenping/" style="text-decoration:none;">Wenping Wang</a></td>
                 </tr>
                 <tr>
                     <td align="center" style="font-size:90%">The University of Hong Kong</td>
                 </tr>
                 <tr>
-                    <td align="center" style="font-size:90%">IEEE Conference on Computer Vision and Pattern Recognition (CVPR 2019)</td>
+                    <td align="center" style="font-size:90%">International Conference on Computer Vision (ICCV), 2019</td>
                 </tr>
                 <tr>
                     <td align="center" style="font-size:100%">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td align="center"><img src="src\overview.png" width="75%" alt="Paper teaser" /></td>
+                    <td align="center"><img src="src\teaser.png" width="55%" alt="Paper teaser" /></td>
                 </tr>
                 <tr>
-                    <td align="justify" style="font-size:75%">
-                        An example of tooth segmentation and tooth identification. The first column shows a CBCT scan in the axis view, the second column shows its segmentation results, and the last column shows the 3D segmentation results with different colors for different teeth respectively.
+                    <td align="center" style="font-size:75%">
+                        We present a method to jointly align a set of un-ordered partial reconstructions and estimate a room layout.
                     </td>
                 </tr>
                 <tr>
@@ -182,22 +182,20 @@
                 </tr>
                 <tr>
                     <td align="justify" style="font-size:75%">
-                        This paper proposes a method that uses deep convolutional neural networks to achieve automatic and accurate tooth instance segmentation and identification from CBCT (cone beam CT) images for digital dentistry. The core of our method is a two-stage network. In the first stage, an edge map is extracted from the input CBCT image to enhance image contrast along shape boundaries. Then this edge map and the input images are passed to the second stage. In the second stage, we build our network upon the 3D region proposal network (RPN) with a novel learnedsimilarity matrix to help efficiently remove redundant proposals, speed up training and save GPU memory. To resolve the ambiguity in the identification task, we encode teeth spatial relationships as an additional feature input in the identification task, which helps to remarkably improve the identification accuracy. Our evaluation, comparison and comprehensive ablation studies demonstrate that our method produces accurate instance segmentation and identification results automatically and outperforms the state-of-the-art approaches. To the best of our knowledge, our method is the first to use neural networks to achieve automatic tooth segmentation and identification from CBCT images.                    </td>
+						We present a novel approach to align partial 3D reconstructions which may not have substantial overlap. Using floorplan priors, our method jointly predicts a room layout and estimates the transformations from a set of partial 3D data. Unlike the existing methods relying on feature descriptors to establish correspondences, we exploit the 3D ``box'' structure of a typical room layout that meets the Manhattan World property. We first estimate a local layout for each partial scan separately and then combine these local layouts to form a globally aligned layout with loop closure. Without the requirement of feature matching, the proposed method enables some novel applications ranging from large or featureless scene reconstruction and modeling from sparse input. We validate our method quantitatively and qualitatively on real and synthetic scenes of various sizes and complexities. The evaluations and comparisons show superior effectiveness and accuracy of our method. 
+                    </td>
                 </tr>
-                <!--<tr>
-                    <td align="left" style="font-size:110%"><strong>Paper and data</strong></td>
-                </tr>-->
                 <tr align="left">
                     <td>
                         <table>
                             <tr>
-                                <td><img src="src\toothNet_paper_thumbnail.jpg" width="220"/></td>
+                                <td><img src="src\paper_thumbnail.png" width="210" /></td>
                                 <td>&nbsp;</td>
-                                <td align="justify" style="font-size:75%">
-                                    <strong>Paper</strong> [<a href="paper\toothNet_CVPR2019.pdf" target="_blank">PDF</a>] <br/><br />
-                                    <!--<strong>Code and Data</strong> [<a href="">Comming Soon...</a>] <br /><br />-->
-                                    <strong>Citation:</strong><br>Zhiming Cui,  Changjian Li, and  Wenping Wang, “ToothNet: Automatic Tooth Instance Segmentation and Identification from Cone Beam CT Images,” in The IEEE Conference on Computer Vision and Pattern Recognition (CVPR), June 2019 </br><a href="./toothNet.bib" target="_blank">(bibtex)</a> <br/> <br/>
-									<Strong> In the press: </strong><br><a href="https://www.computer.org/publications/tech-news/events/ieee-conference-on-computer-vision-and-pattern-recognition-2019-poster-sessions" target="_blank">Poster Sessions Provoke Deep Discussions at the 2019 Conference on CVPR.</a>
+                                <td style="font-size:75%">
+                                    <strong>Paper</strong> [<a href="">Coming Soon...</a>] <br/><br />
+                                    <strong>Supl</strong> [<a href="">Coming Soon...</a>] <br /><br />
+                                    <!--<strong>Citation</strong><br/>xxx<br/>
+                                    <a href="bendsketch_bibtex.bib">(bibtex)</a>-->
                                 </td>
                             </tr>
                         </table>
@@ -207,32 +205,42 @@
                     <td align="center">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td align="left" style="font-size:100%"><strong>Network Overview</strong></td>
+                    <td align="left" style="font-size:100%"><strong>Algorithm pipeline</strong></td>
                 </tr>
                 <tr>
-                    <td><img src="src\pipeline.png" width="100%" /></td>
+                    <td><img src="src\pipeline.png" width="95%" /></td>
                 </tr>
                 <tr>
                     <td align="justify" style="font-size:75%">
-                        Our two-stage network architecture for tooth instance segmentation and identification. Given CBCT images, we first pass them
-						to the edge map extraction network in stage one, where the deep supervised scheme is used. Then the detected edge map and the original
-						CBCT images are sent to the region proposal network with a novel similarity matrix. Four individual branches are followed for tooth
-						segmentation, classification, 3D box regressor and identification. In the identification branch, we further add the spatial relation component
-						to help resolve the ambiguity.
+                        Overview of the proposed method. Given a set of unordered partial reconstructions (a), our algorithm first estimatestheir local floorplans (b) respectively.  Then we compute the poses (c) of all the local floorplans to find a global optimalplacement (d) followed by a refinement process (d). Finally we output the aligned complete reconstruction (e) and predict afinal room layout (f) accordingly.
                     </td>
                 </tr>
                 <tr>
                     <td align="center">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td align="left" style="font-size:100%"><strong>Representative Results</strong></td>
-                </tr>				
+                    <td align="left" style="font-size:100%"><strong>Results</strong></td>
+                </tr>
                 <tr>
-                    <td><img src="src\result_gallery.png" width="100%" /></td>
+                    <td><img src="src\building_results.png" width="100%" /></td>
                 </tr>
 				<tr>
-                    <td align="justify" style="font-size:75%">
-                        The results gallery of the tooth segmentation and identification. Different CT scans with segmentation results are shown in the first column, and the reconstructed 3D teeth models from three different views are shown in the following three columns. The numbers illustrate the scan indices and different colors illustrate different teeth. In addition, the second example contains a removed molar tooth, whose position is marked by the red dashed box.</td>
+                    <td align="center" style="font-size:75%">
+                        Results of the partial reconstruction alignment and the global layout estimation.
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        <br>
+                    </td>
+                </tr>
+				<tr>
+                    <td><img src="src\RGBD_results.png" width="80%" /></td>
+                </tr>
+				<tr>
+                    <td align="center" style="font-size:75%">
+                        Room layout modeling by stitching sparse RGB-D frames.
+                    </td>
                 </tr>
                 <tr>
                     <td align="center">&nbsp;</td>
@@ -241,7 +249,7 @@
                     <td align="center">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td align="center" style="font-size:80%">&copy;Changjian Li. Last update: July 18, 2019.</td>
+                    <td align="center" style="font-size:80%">&copy;Changjian Li. Last update: July 28, 2019.</td>
                 </tr>
             </table>
         </div>
