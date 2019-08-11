@@ -170,19 +170,19 @@
                     <td align="center" style="font-size:100%">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td align="center"><img src="src\teaser.png" width="55%" alt="Paper teaser" /></td>
+                    <td align="center"><img src="src\teaser.png" width="60%" alt="Paper teaser" /></td>
                 </tr>
                 <tr>
-                    <td align="center" style="font-size:75%">
-                        We present a method to jointly align a set of un-ordered partial reconstructions and estimate a room layout.
+                    <td align="justify" style="font-size:75%">
+                        In this paper, we propose a method for registering partial reconstructions of an indoor scene which may not have sufficient overlap. Our key observation is that the local layouts of partial reconstructions can be viewed as the fragments of a global room layout which typically has the following two characteristics: (1) the room layout is a set of perpendicular or parallel walls, which is referred to the Manhattan World (MW) property; (2) the room layout forms a closed loop on a 2D floorplan. We exploit these properties to develop an efficient method for jointly predicting a room layout that has the above layout properties and estimating the transformations from a set of unordered partial reconstructions.
                     </td>
                 </tr>
                 <tr>
                     <td align="left" style="font-size:100%"><strong>Abstract</strong></td>
                 </tr>
                 <tr>
-                    <td align="justify" style="font-size:75%">
-						We present a novel approach to align partial 3D reconstructions which may not have substantial overlap. Using floorplan priors, our method jointly predicts a room layout and estimates the transformations from a set of partial 3D data. Unlike the existing methods relying on feature descriptors to establish correspondences, we exploit the 3D ``box'' structure of a typical room layout that meets the Manhattan World property. We first estimate a local layout for each partial scan separately and then combine these local layouts to form a globally aligned layout with loop closure. Without the requirement of feature matching, the proposed method enables some novel applications ranging from large or featureless scene reconstruction and modeling from sparse input. We validate our method quantitatively and qualitatively on real and synthetic scenes of various sizes and complexities. The evaluations and comparisons show superior effectiveness and accuracy of our method. 
+                    <td align="justify" style="font-size:80%">
+						We present a novel approach to align partial 3D reconstructions which may not have substantial overlap. Using floorplan priors, our method jointly predicts a room layout and estimates the transformations from a set of partial 3D data. Unlike the existing methods relying on feature descriptors to establish correspondences, we exploit the 3D 'box' structure of a typical room layout that meets the Manhattan World property. We first estimate a local layout for each partial scan separately and then combine these local layouts to form a globally aligned layout with loop closure. Without the requirement of feature matching, the proposed method enables some novel applications ranging from large or featureless scene reconstruction and modeling from sparse input. We validate our method quantitatively and qualitatively on real and synthetic scenes of various sizes and complexities. The evaluations and comparisons show superior effectiveness and accuracy of our method. 
                     </td>
                 </tr>
                 <tr align="left">
@@ -192,10 +192,10 @@
                                 <td><img src="src\paper_thumbnail.png" width="210" /></td>
                                 <td>&nbsp;</td>
                                 <td style="font-size:75%">
-                                    <strong>Paper</strong> [<a href="">Coming Soon...</a>] <br/><br />
-                                    <strong>Supl</strong> [<a href="">Coming Soon...</a>] <br /><br />
-                                    <!--<strong>Citation</strong><br/>xxx<br/>
-                                    <a href="bendsketch_bibtex.bib">(bibtex)</a>-->
+                                    <strong>Paper</strong> [<a href=".\src\paper\floorplanJigsaw_ICCV2019.pdf" target="_blank">PDF</a>]<br/><br/>
+                                    <strong>Code and Data</strong> [<a href="">Coming Soon...</a>]<br/><br/>
+                                    <strong>Citation and bibtex</strong> [Coming Soon...]<br/><br/>
+                                    <!--<a href="bendsketch_bibtex.bib">(bibtex)</a>-->
                                 </td>
                             </tr>
                         </table>
@@ -205,10 +205,10 @@
                     <td align="center">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td align="left" style="font-size:100%"><strong>Algorithm pipeline</strong></td>
+                    <td align="left" style="font-size:100%"><strong>Algorithm Pipeline</strong></td>
                 </tr>
                 <tr>
-                    <td><img src="src\pipeline.png" width="95%" /></td>
+                    <td><img src="src\pipeline.png" width="100%" /></td>
                 </tr>
                 <tr>
                     <td align="justify" style="font-size:75%">
@@ -219,8 +219,13 @@
                     <td align="center">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td align="left" style="font-size:100%"><strong>Results</strong></td>
+                    <td align="left" style="font-size:100%"><strong>Representative Results</strong></td>
                 </tr>
+				<tr>
+					<td align="justify" style="font-size:75%">
+					We evaluate our algorithm using 101 scenes collected from SUNCG dataset, SUN3D dataset and our real-world scanning. Each scene is given by a set of partial reconstructions derived from the region-by-region capturing or the failures of camera localization. A challenge in our testing data is, there may not be sufficient overlap among the partial data. Our dataset covers representative indoor layouts of which the scene area varies from 2m x 6m to 18m x 20m, and the number of wall corners varies from 4 to 16. All the experiments are performed on a machine with Intel Core i7-7700K 4.2GHz CPU and 32GB RAM. Below are some representative results.
+					</td>
+				</tr>
                 <tr>
                     <td><img src="src\building_results.png" width="100%" /></td>
                 </tr>
@@ -234,22 +239,19 @@
                         <br>
                     </td>
                 </tr>
-				<tr>
+				<!--<tr>
                     <td><img src="src\RGBD_results.png" width="80%" /></td>
                 </tr>
 				<tr>
                     <td align="center" style="font-size:75%">
                         Room layout modeling by stitching sparse RGB-D frames.
                     </td>
-                </tr>
+                </tr>-->
                 <tr>
                     <td align="center">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td align="center">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td align="center" style="font-size:80%">&copy;Changjian Li. Last update: July 28, 2019.</td>
+                    <td align="center" style="font-size:80%">&copy;Changjian Li. Last update: August, 2019.</td>
                 </tr>
             </table>
         </div>
