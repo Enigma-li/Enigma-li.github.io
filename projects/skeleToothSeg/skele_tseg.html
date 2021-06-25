@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- TemplateBeginEditable name="doctitle" -->
-    <title>SEG-MAT: 3D Shape Segmentation Using Medial Axis Transform</title>
+    <title>Hierarchical Morphology-Guided Tooth Instance Segmentation from CBCT Images</title>
     <!-- TemplateEndEditable -->
     <!-- TemplateBeginEditable name="head" -->
     <!-- TemplateEndEditable -->
@@ -155,24 +155,27 @@
         <div class="content">
             <table width="80%" align="center" cellspacing="10">
                 <tr>
-                    <td align="center" style="font-size:120%"><strong>SEG-MAT: 3D Shape Segmentation Using Medial Axis Transform</strong></td>
+                    <td align="center" style="font-size:120%"><strong>Hierarchical Morphology-Guided Tooth Instance Segmentation from CBCT Images</strong></td>
                 </tr>
                 <tr>
-                   <td align="center" style="font-size:90%"><a href="https://clinplayer.github.io/" style="text-decoration:none;">Cheng Lin</a><font size="2"><sup>1</sup></font>,&nbsp&nbsp <a href="https://lingjie0206.github.io/" style="text-decoration:none;">Lingjie Liu</a><font size="2"><sup>1</sup></font>,&nbsp&nbsp <a href="https://enigma-li.github.io/" style="text-decoration:none;">Changjian Li</a><font size="2"><sup>1</sup></font>,&nbsp&nbsp <a href="https://www.graphics.rwth-aachen.de/person/3/" style="text-decoration:none;">Leif Kobbelt</a><font size="2"><sup>2</sup></font>,<br>
-				   <a href="http://cgcad.thss.tsinghua.edu.cn/wangbin/" style="text-decoration:none;">Bin Wang</a><font size="2"><sup>3</sup></font>,&nbsp&nbsp <a href="http://irc.cs.sdu.edu.cn/~shiqing/index.html" style="text-decoration:none;">Shiqing Xin</a><font size="2"><sup>4</sup></font>,&nbsp&nbsp <a href="http://i.cs.hku.hk/~wenping/" style="text-decoration:none;">Wenping Wang</a><font size="2"><sup>1</sup></font></td>
+                   <td align="center" style="font-size:90%">Zhiming Cui<font size="2"><sup>1,6,7</sup></font>,&nbsp&nbsp Bojun Zhang<font size="2"><sup>2</sup></font>,&nbsp&nbsp Chunfeng Lian<font size="2"><sup>3</sup></font>,&nbsp&nbsp Changjian Li<font size="2"><sup>4</sup></font>,&nbsp&nbsp Lei Yang<font size="2"><sup>1</sup></font>,<br>
+				   Wenping Wang<font size="2"><sup>1,5</sup></font>,&nbsp&nbsp Ming Zhu</a><font size="2"><sup>2</sup></font>,&nbsp&nbsp Dinggang Shen</a><font size="2"><sup>6,7</sup></font></td>
                 </tr>
-					<td align="center" style="font-size:90%"><font size="2"><sup>1</sup></font>The University of Hong Kong,&nbsp&nbsp <font size="2"><sup>2</sup></font>RWTH Aachen University,<br>
-					<font size="2"><sup>3</sup></font>Tsinghua University,&nbsp&nbsp <font size="2"><sup>4</sup></font>Shandnong University</td>
+					<td align="center" style="font-size:90%"><font size="2"><sup>1</sup></font>The University of Hong Kong,&nbsp&nbsp <font size="2"><sup>2</sup></font>Shanghai Ninth People’s Hospital, <font size="2"><sup>3</sup></font>Xi’an Jiaotong University,&nbsp&nbsp<br>
+					<font size="2"><sup>4</sup></font> University College London, <font size="2"><sup>5</sup></font>Texas A&M University,&nbsp&nbsp <font size="2"><sup>6</sup></font> ShanghaiTech University,&nbsp&nbsp </br> 
+					<font size="2"><sup>7</sup></font> Shanghai United Imaging Intelligence Co., Ltd.&nbsp&nbsp</td>
                 <tr>
-                    <td align="center" style="font-size:90%">IEEE Visualization and Computer Graphics (TVCG), 2020</td>
+                    <td align="center" style="font-size:90%">International Conference on Information Processing in Medical Imaging (IPMI), 2021</td>
                 </tr>
-
+				<tr>
+                    <td align="center" style="font-size:100%;color:red;">Oral Presentation<br/></td>
+                </tr>
                 <tr>
                     <td align="center"><img src="src\teaser.png" width="100%" alt="Paper teaser" /></td>
                 </tr>
                 <tr>
-                    <td align="center" style="font-size:75%">
-                        Fig. 1. SEG-MAT is a geometry-driven method for single shape segmentation and analysis.
+                    <td align="justify" style="font-size:75%">
+                        Fig. 1. The first row shows three typical examples, including (a) teeth with large shape variations; (b) touching boundaries of maxillary and mandibular teeth during close bite; (c) blurred signals between tooth roots and the surrounding alveolar bones. The second row illustrates different components of the hierarchical morphological representations, including the points (i.e., the tooth centroid (d) and the root landmarks at root apices (f)), the tooth skeleton (e), and the tooth boundary surface (g).
                     </td>
                 </tr>
                 <tr>
@@ -180,7 +183,7 @@
                 </tr>
                 <tr>
                     <td align="justify" style="font-size:80%">
-						Segmenting arbitrary 3D objects into constituent parts that are structurally meaningful is a fundamental problem encountered in a wide range of computer graphics applications. Existing methods for 3D shape segmentation suffer from complex geometry processing and heavy computation caused by using low-level features and fragmented segmentation results due to the lack of global consideration. We present an efficient method, called SEG-MAT, based on the medial axis transform (MAT) of the input shape. Specifically, with the rich geometrical and structural information encoded in the MAT, we are able to develop a simple and principled approach to effectively identify the various types of junctions between different parts of a 3D shape. Extensive evaluations and comparisons show that our method outperforms the state-of-the-art methods in terms of segmentation quality and is also one order of magnitude faster.
+						Automatic and accurate segmentation of individual teeth, i.e., tooth instance segmentation, from CBCT images is an essential step for computer-aided dentistry. Previous works typically overlooked rich morphological features of teeth, such as tooth root apices, critical for successful treatment outcomes. This paper presents a two-stage learningbased framework that explicitly leverages the comprehensive geometric guidance provided by a hierarchical tooth morphological representation for tooth instance segmentation. Given a 3D input CBCT image, our method first learns to extract the tooth centroids and skeletons for identifying each tooth’s rough position and topological structures, respectively. Based on the outputs of the first step, a multi-task learning mechanism is further designed to estimate each tooth’s volumetric mask by simultaneously regressing boundary and root apices as auxiliary tasks. Extensive evaluations, ablation studies, and comparisons with existing methods show that our approach achieved state-of-the-art segmentation performance, especially around the challenging dental parts (i.e., tooth roots and boundaries). These results suggest the potential applicability of our framework in real-world clinical scenarios.
                     </td>
                 </tr>
                 <tr align="left">
@@ -190,10 +193,8 @@
                                 <td><img src="src\paper_thumbnail.png" width="210" /></td>
                                 <td>&nbsp;</td>
                                 <td style="font-size:75%">
-									<strong>Paper</strong> [<a href="https://arxiv.org/pdf/2010.11488.pdf" target="_blank">ArXiv</a>]<br/>
-                                    <strong>Code and Data</strong> [<a href="https://github.com/clinplayer/SEG-MAT">GitHub</a>]<br/><br/>
-									<strong><font color=blue size=3px>Exexutable Program</font></strong> [<a href="https://clinplayer.github.io/resources/SEG-MAT-Release.zip">Windows exe</a>]<br/><br/>
-									<strong>Citation:</strong><br>Lin, Cheng, Lingjie Liu, Changjian Li, Leif Kobbelt, Bin Wang, Shiqing Xin, and Wenping Wang. "SEG-MAT: 3D Shape Segmentation Using Medial Axis Transform." IEEE transactions on visualization and computer graphics (TVCG), 2020. <a href="./segmat.bib" target="_blank">(bibtex)</a><br/>
+									<strong>Paper</strong> [<a href="src/ToothSeg_IMPI_2021.pdf" target="_blank">PDF</a>]<br/><br/>
+									<strong>Citation:</strong><br>Cui, Zhiming, Bojun Zhang, Chunfeng Lian, Changjian Li, Lei Yang, Wenping Wang, Min Zhu, and Dinggang Shen. "Hierarchical Morphology-Guided Tooth Instance Segmentation from CBCT Images." In International Conference on Information Processing in Medical Imaging, pp. 150-162. Springer, Cham, 2021. <a href="./skeleTSeg.bib" target="_blank">(bibtex)</a><br/>
                                 </td>
                             </tr>
                         </table>
@@ -204,6 +205,28 @@
                         <br>
                     </td>
                 </tr>
+				<tr>
+                    <td align="left" style="font-size:100%"><strong>Network Overview</strong></td>
+                </tr>
+                <tr>
+                    <td><img src="src\pipeline_stage1.png" width="100%" /></td>
+                </tr>
+                <tr>
+                    <td align="justify" style="font-size:75%">
+                        Fig. 2. The pipeline of our 1st-stage network for tooth skeleton extraction. The CBCT scan is first fed into both the centroid network and the skeleton network to generate the offsets and binary maps, respectively. Then, the tooth centroids and skeletons are detected and predicted by the later steps (dotted lines).
+                    </td>
+                </tr>
+				<tr>
+                    <td><img src="src\pipeline_stage2.png" width="100%" /></td>
+                </tr>
+                <tr>
+                    <td align="justify" style="font-size:75%">
+                        Fig. 3. The pipeline of our 2nd-stage multi-task network for tooth instance segmentation guided by skeletons. The inputs are the cropped input image and skeleton patches cropped from the 3D input image and tooth skeleton label map, and the outputs are the tooth segmentation volume, boundary, and root landmarks.
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">&nbsp;</td>
+                </tr>
                 <tr>
                     <td align="left" style="font-size:100%"><strong>Results</strong></td>
                 </tr>
@@ -211,74 +234,24 @@
                     <td align="left" style="font-size:90%"><strong>Result Gallery</strong></td>
                 </tr>
 				<tr>
-					<td align="justify" style="font-size:75%">
-					We show our segmentation results for a variety of 3D shapes in Fig. 2. We use the same parameter settings for shapes of different categories and different datasets. Our method is able to segment various types of shapes and determine the number of parts automatically using consistent settings, which demonstrates the flexibility and robustness of our method. 
-					</td>
-				</tr>
-                <tr>
-                    <td><img src="src\result_gallery.png" width="90%" /></td>
+                    <td><img src="src\result_gallery.png" width="100%" /></td>
                 </tr>
 				<tr>
-                    <td align="center" style="font-size:75%">
-                        Fig. 2. Segmentation results of SEG-MAT for various shapes. We always use consistent parameter settings for different shapes and datasets; the number of parts of each shape is determined by the algorithm automatically.
-                    </td>
-                </tr>
+					<td align="justify" style="font-size:75%">
+					Fig. 4. Typical results of the hierarchical tooth morphological representation. From left to right: 3D segmentation results, predicted tooth centroids, skeletons, root apices, and boundaries. The last four columns are the partial results of the first column within the red boxes. (Color figure online)
+					</td>
+				</tr>
 				<tr>
                     <td align="left" style="font-size:90%"><strong>Comparison</strong></td>
                 </tr>
-				<tr>
-					<td align="justify" style="font-size:75%">
-					We compare qualitatively with some representative rule-based methods in Fig. 3. It can be observed SEG-MAT gives better segmentation results that are more consistent with human’s perception.
-					</td>
-				</tr>
                 <tr>
-                    <td><img src="src\comparison.png" width="70%" /></td>
-                </tr>
-				<tr>
-                    <td align="center" style="font-size:75%">
-                        Fig. 3. Qualitative comparison with representative rule-based geometrical segmentation methods.
-                    </td>
-                </tr>
-				<tr>
-                    <td align="left" style="font-size:90%"><strong>Structural Analysis</strong></td>
+                    <td><img src="src\comparison.png" width="100%" /></td>
                 </tr>
 				<tr>
 					<td align="justify" style="font-size:75%">
-					The unsupervised learning methods do not require manually annotated labels. The segmentation also relies on the intrinsic geometrical properties of a shape rather than predefined labels and the results follow the minima rule. Therefore, learning-based methods of this category have the same goal as our algorithm and can be included for comparison. Recently, Tulsiani et al. and Sun et al. propose unsupervised methods for structural analysis of 3D shapes. They learn to parse a 3D shape into a set of cuboid primitives and induce a segmentation by the projection of the predicted primitives onto the original shape. Fig. 4 shows qualitative comparison results with these methods, where our results are more structurally meaningful and able to capture more detailed components.
+					Fig. 5. The visual comparison of tooth segmentation results by four different methods. Two typical examples are presented, each being shown by two rows with 2D segmentation masks and corresponding 3D reconstruction results, respectively.
 					</td>
 				</tr>
-                <tr>
-                    <td><img src="src\structure_application.png" width="90%" /></td>
-                </tr>
-				<tr>
-                    <td align="center" style="font-size:75%">
-                        Fig. 4. Qualitative comparison with unsupervised learning methods for primitive-based approximation and part-based segmentation.
-                    </td>
-                </tr>
-				<tr>
-                    <td align="left" style="font-size:90%"><strong>Robustness against noise</strong></td>
-                </tr>
-				<tr>
-					<td align="justify" style="font-size:75%">
-					Although the MAT itself is very sensitive to boundary noise, our algorithm is resilient in the presence of significant noise. Fig. 5 shows an example of applying our algorithm to a model with increasing noise, with all the parameters being fixed. It can be observed that SEG-MAT produces almost consistent segmentation results at different noise levels. The robustness of SEG-MAT to surface noise is due to the use of the region growing technique and the swallowing process. Region growing is a greedy strategy, and hence we can generate stable regions by greedily finding similar neighbors rather than globally considering the insignificant branches. More importantly, the “swallowing” process merges the noisy branches into the stable regions, and thus the noisy branches will not be considered as valid parts. Therefore, the algorithm only focuses on the backbone of the MAT and is insensitive to noise. More results are shown in Fig. 6 for some shapes with significant noise. 
-					</td>
-				</tr>
-                <tr>
-                    <td><img src="src\robustness.png" width="70%" /></td>
-                </tr>
-				<tr>
-                    <td align="center" style="font-size:75%">
-                        Fig. 5. Robustness of SEG-MAT against surface noise. The first row shows the medial meshes and the second row shows the corresponding segmentation results. We add to each mesh vertex a white Gaussian noise with the mean value equal to zero and the standard deviation sigma = 0:0%; 0:2%; 0:5%; 1:0% of the length of the diagonal of bounding box respectively. Using a same set of parameter values, SEG-MAT is able to produce almost consistent segmentation results. 
-                    </td>
-                </tr>
-				<tr>
-                    <td><img src="src\anti_noise.png" width="70%" /></td>
-                </tr>
-				<tr>
-                    <td align="center" style="font-size:75%">
-                        Fig. 6. More segmentation results of shapes with significant noise, while SEG-MAT is still able to segment these shapes into meaningful parts.
-                    </td>
-                </tr>
 				<tr>
                     <td>
                         <br>
@@ -288,7 +261,7 @@
                     <td align="center">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td align="center" style="font-size:80%">&copy;Changjian Li. Last update: October, 2020.</td>
+                    <td align="center" style="font-size:80%">&copy;Changjian Li. Last update: June, 2021.</td>
                 </tr>
             </table>
         </div>

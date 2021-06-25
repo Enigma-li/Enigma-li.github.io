@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- TemplateBeginEditable name="doctitle" -->
-    <title>SEG-MAT: 3D Shape Segmentation Using Medial Axis Transform</title>
+    <title>Structure-Driven Unsupervised Domain Adaptation for Cross-Modality Cardiac Segmentation</title>
     <!-- TemplateEndEditable -->
     <!-- TemplateBeginEditable name="head" -->
     <!-- TemplateEndEditable -->
@@ -155,24 +155,24 @@
         <div class="content">
             <table width="80%" align="center" cellspacing="10">
                 <tr>
-                    <td align="center" style="font-size:120%"><strong>SEG-MAT: 3D Shape Segmentation Using Medial Axis Transform</strong></td>
+                    <td align="center" style="font-size:120%"><strong>Structure-Driven Unsupervised Domain Adaptation for Cross-Modality Cardiac Segmentation</strong></td>
                 </tr>
                 <tr>
-                   <td align="center" style="font-size:90%"><a href="https://clinplayer.github.io/" style="text-decoration:none;">Cheng Lin</a><font size="2"><sup>1</sup></font>,&nbsp&nbsp <a href="https://lingjie0206.github.io/" style="text-decoration:none;">Lingjie Liu</a><font size="2"><sup>1</sup></font>,&nbsp&nbsp <a href="https://enigma-li.github.io/" style="text-decoration:none;">Changjian Li</a><font size="2"><sup>1</sup></font>,&nbsp&nbsp <a href="https://www.graphics.rwth-aachen.de/person/3/" style="text-decoration:none;">Leif Kobbelt</a><font size="2"><sup>2</sup></font>,<br>
-				   <a href="http://cgcad.thss.tsinghua.edu.cn/wangbin/" style="text-decoration:none;">Bin Wang</a><font size="2"><sup>3</sup></font>,&nbsp&nbsp <a href="http://irc.cs.sdu.edu.cn/~shiqing/index.html" style="text-decoration:none;">Shiqing Xin</a><font size="2"><sup>4</sup></font>,&nbsp&nbsp <a href="http://i.cs.hku.hk/~wenping/" style="text-decoration:none;">Wenping Wang</a><font size="2"><sup>1</sup></font></td>
+                   <td align="center" style="font-size:90%">Zhiming Cui<font size="2"><sup>1,2</sup></font>,&nbsp&nbsp Changjian Li<font size="2"><sup>3</sup></font>,&nbsp&nbsp Zhixu Du<font size="2"><sup>1</sup></font>,&nbsp&nbsp Nenglun Chen<font size="2"><sup>1</sup></font>,&nbsp&nbsp Guodong Wei<font size="2"><sup>1</sup></font>,<br>
+				   Runnan Chen<font size="2"><sup>1</sup></font>,&nbsp&nbsp Lei Yang</a><font size="2"><sup>1</sup></font>,&nbsp&nbsp Dinggang Shen</a><font size="2"><sup>2</sup></font>,&nbsp&nbsp Wenping Wang</a><font size="2"><sup>1,5</sup></font></td>
                 </tr>
-					<td align="center" style="font-size:90%"><font size="2"><sup>1</sup></font>The University of Hong Kong,&nbsp&nbsp <font size="2"><sup>2</sup></font>RWTH Aachen University,<br>
-					<font size="2"><sup>3</sup></font>Tsinghua University,&nbsp&nbsp <font size="2"><sup>4</sup></font>Shandnong University</td>
+					<td align="center" style="font-size:90%"><font size="2"><sup>1</sup></font>The University of Hong Kong,&nbsp&nbsp <font size="2"><sup>2</sup></font> ShanghaiTech University,<br>
+					<font size="2"><sup>3</sup></font> University College London, <font size="2"><sup>4</sup></font>Texas A&M University&nbsp&nbsp</td>
                 <tr>
-                    <td align="center" style="font-size:90%">IEEE Visualization and Computer Graphics (TVCG), 2020</td>
+                    <td align="center" style="font-size:90%">IEEE Transactions on Medical Imaging (TMI), 2021<br/><br/></td>
                 </tr>
 
                 <tr>
-                    <td align="center"><img src="src\teaser.png" width="100%" alt="Paper teaser" /></td>
+                    <td align="center"><img src="src\teaser.png" width="80%" alt="Paper teaser" /></td>
                 </tr>
                 <tr>
-                    <td align="center" style="font-size:75%">
-                        Fig. 1. SEG-MAT is a geometry-driven method for single shape segmentation and analysis.
+                    <td align="justify" style="font-size:75%">
+                        Fig. 1. Overview of our unsupervised domain adaptation method on cardiac MRI and CT images. The example shows MRI (source) to CT (target) adaptation. Specifically, our method aims to extract the cardiac structure across modalities by a set of landmarks, while accurately predict object labels in the target domain guided by the domain-invariant structural landmarks and edge information.
                     </td>
                 </tr>
                 <tr>
@@ -180,7 +180,7 @@
                 </tr>
                 <tr>
                     <td align="justify" style="font-size:80%">
-						Segmenting arbitrary 3D objects into constituent parts that are structurally meaningful is a fundamental problem encountered in a wide range of computer graphics applications. Existing methods for 3D shape segmentation suffer from complex geometry processing and heavy computation caused by using low-level features and fragmented segmentation results due to the lack of global consideration. We present an efficient method, called SEG-MAT, based on the medial axis transform (MAT) of the input shape. Specifically, with the rich geometrical and structural information encoded in the MAT, we are able to develop a simple and principled approach to effectively identify the various types of junctions between different parts of a 3D shape. Extensive evaluations and comparisons show that our method outperforms the state-of-the-art methods in terms of segmentation quality and is also one order of magnitude faster.
+						Performance degradation due to domain shift remains a major challenge in medical image analysis. Unsupervised domain adaptation that transfers knowledge learned from the source domain with ground truth labels to the target domain without any annotation is the mainstream solution to resolve this issue. In this paper, we present a novel unsupervised domain adaptation framework for cross-modality cardiac segmentation, by explicitly capturing a common cardiac structure embedded across different modalities to guide cardiac segmentation. In particular, we first extract a set of 3D landmarks, in a selfsupervised manner, to represent the cardiac structure of different modalities. The high-level structure information is then combined with another complementary feature, the Canny edges, to produce accurate cardiac segmentation results both in the source and target domains. We extensively evaluate our method on the MICCAI 2017 MM-WHS dataset for cardiac segmentation. The evaluation, comparison and comprehensive ablation studies demonstrate that our approach achieves satisfactory segmentation results and outperforms state-of-the-art unsupervised domain adaptation methods by a significant margin.
                     </td>
                 </tr>
                 <tr align="left">
@@ -190,10 +190,9 @@
                                 <td><img src="src\paper_thumbnail.png" width="210" /></td>
                                 <td>&nbsp;</td>
                                 <td style="font-size:75%">
-									<strong>Paper</strong> [<a href="https://arxiv.org/pdf/2010.11488.pdf" target="_blank">ArXiv</a>]<br/>
-                                    <strong>Code and Data</strong> [<a href="https://github.com/clinplayer/SEG-MAT">GitHub</a>]<br/><br/>
-									<strong><font color=blue size=3px>Exexutable Program</font></strong> [<a href="https://clinplayer.github.io/resources/SEG-MAT-Release.zip">Windows exe</a>]<br/><br/>
-									<strong>Citation:</strong><br>Lin, Cheng, Lingjie Liu, Changjian Li, Leif Kobbelt, Bin Wang, Shiqing Xin, and Wenping Wang. "SEG-MAT: 3D Shape Segmentation Using Medial Axis Transform." IEEE transactions on visualization and computer graphics (TVCG), 2020. <a href="./segmat.bib" target="_blank">(bibtex)</a><br/>
+									<strong>Paper</strong> [<a href="src/CardiacSeg_DomainAdaptation_TMI_2021.pdf" target="_blank">PDF</a>]<br/><br/>
+                                    <strong>Code and Data</strong> [<a href="">Coming soon...</a>]<br/><br/>
+									<strong>Citation:</strong> <a href="./skeleTSeg.bib" target="_blank">(bibtex)</a><br/>
                                 </td>
                             </tr>
                         </table>
@@ -204,81 +203,50 @@
                         <br>
                     </td>
                 </tr>
+				<tr>
+                    <td align="left" style="font-size:100%"><strong>Network Overview</strong></td>
+                </tr>
+                <tr>
+                    <td><img src="src\pipeline.png" width="100%" /></td>
+                </tr>
+                <tr>
+                    <td align="justify" style="font-size:75%">
+                        Fig. 2. The framework of our method for unsupervised domain adaptation. The landmark detection module first extracts the anatomical cardiac structure represented by a set of 3D landmarks. The disentangle process is achieved by the conditional image generation mechanism. Then, the segmentation module takes as input both the extracted structure and a set of edges from the Canny operator to produce reliable results.
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">&nbsp;</td>
+                </tr>
                 <tr>
                     <td align="left" style="font-size:100%"><strong>Results</strong></td>
                 </tr>
 				<tr>
+					<td align="justify" style="font-size:75%">
+					We have evaluated our method on the public dataset, compared it against state-of-the-art methods and conducted comprehensive ablation studies to validate the effectiveness and accuracy. All experiments are performed on a machine with an Intel(R) Xeon(R) V4 1.9GHz CPU, 4 Nvidia 1080Ti GPUs, and 32GB. Below are some representative results, more results and inspiring discussions can be found in the paper.
+					</td>
+				</tr>
+				<tr>
                     <td align="left" style="font-size:90%"><strong>Result Gallery</strong></td>
                 </tr>
 				<tr>
-					<td align="justify" style="font-size:75%">
-					We show our segmentation results for a variety of 3D shapes in Fig. 2. We use the same parameter settings for shapes of different categories and different datasets. Our method is able to segment various types of shapes and determine the number of parts automatically using consistent settings, which demonstrates the flexibility and robustness of our method. 
-					</td>
-				</tr>
-                <tr>
-                    <td><img src="src\result_gallery.png" width="90%" /></td>
+                    <td><img src="src\result_gallery.png" width="100%" /></td>
                 </tr>
 				<tr>
-                    <td align="center" style="font-size:75%">
-                        Fig. 2. Segmentation results of SEG-MAT for various shapes. We always use consistent parameter settings for different shapes and datasets; the number of parts of each shape is determined by the algorithm automatically.
-                    </td>
-                </tr>
+					<td align="justify" style="font-size:75%">
+					Fig. 4. 3D segmentation results and corresponding extracted landmarks, including MRI to CT adaptation (left) and CT to MRI adaptation (right). The first row overlays the segmented cardiac sub-structures with spatial landmarks, where the color-coding of landmarks expresses the consistency across modalities. The second row visualizes the 2D coronal view image slice on the location of the selected landmark point (green box). Each column corresponds to one example.
+					</td>
+				</tr>
 				<tr>
                     <td align="left" style="font-size:90%"><strong>Comparison</strong></td>
                 </tr>
-				<tr>
-					<td align="justify" style="font-size:75%">
-					We compare qualitatively with some representative rule-based methods in Fig. 3. It can be observed SEG-MAT gives better segmentation results that are more consistent with human’s perception.
-					</td>
-				</tr>
                 <tr>
-                    <td><img src="src\comparison.png" width="70%" /></td>
-                </tr>
-				<tr>
-                    <td align="center" style="font-size:75%">
-                        Fig. 3. Qualitative comparison with representative rule-based geometrical segmentation methods.
-                    </td>
-                </tr>
-				<tr>
-                    <td align="left" style="font-size:90%"><strong>Structural Analysis</strong></td>
+                    <td><img src="src\comparison.png" width="100%" /></td>
                 </tr>
 				<tr>
 					<td align="justify" style="font-size:75%">
-					The unsupervised learning methods do not require manually annotated labels. The segmentation also relies on the intrinsic geometrical properties of a shape rather than predefined labels and the results follow the minima rule. Therefore, learning-based methods of this category have the same goal as our algorithm and can be included for comparison. Recently, Tulsiani et al. and Sun et al. propose unsupervised methods for structural analysis of 3D shapes. They learn to parse a 3D shape into a set of cuboid primitives and induce a segmentation by the projection of the predicted primitives onto the original shape. Fig. 4 shows qualitative comparison results with these methods, where our results are more structurally meaningful and able to capture more detailed components.
+					Fig. 5. Qualitative results of different methods for unsupervised MRI to CT domain adaptation (top three rows) and CT to MRI domain adaptation (bottom three rows). Typical examples are showed row-by-row. The yellow, green, red and blue colors represent the cardiac structures AA, LA-BC, LV-BC and MYO, respectively.
 					</td>
 				</tr>
-                <tr>
-                    <td><img src="src\structure_application.png" width="90%" /></td>
-                </tr>
-				<tr>
-                    <td align="center" style="font-size:75%">
-                        Fig. 4. Qualitative comparison with unsupervised learning methods for primitive-based approximation and part-based segmentation.
-                    </td>
-                </tr>
-				<tr>
-                    <td align="left" style="font-size:90%"><strong>Robustness against noise</strong></td>
-                </tr>
-				<tr>
-					<td align="justify" style="font-size:75%">
-					Although the MAT itself is very sensitive to boundary noise, our algorithm is resilient in the presence of significant noise. Fig. 5 shows an example of applying our algorithm to a model with increasing noise, with all the parameters being fixed. It can be observed that SEG-MAT produces almost consistent segmentation results at different noise levels. The robustness of SEG-MAT to surface noise is due to the use of the region growing technique and the swallowing process. Region growing is a greedy strategy, and hence we can generate stable regions by greedily finding similar neighbors rather than globally considering the insignificant branches. More importantly, the “swallowing” process merges the noisy branches into the stable regions, and thus the noisy branches will not be considered as valid parts. Therefore, the algorithm only focuses on the backbone of the MAT and is insensitive to noise. More results are shown in Fig. 6 for some shapes with significant noise. 
-					</td>
-				</tr>
-                <tr>
-                    <td><img src="src\robustness.png" width="70%" /></td>
-                </tr>
-				<tr>
-                    <td align="center" style="font-size:75%">
-                        Fig. 5. Robustness of SEG-MAT against surface noise. The first row shows the medial meshes and the second row shows the corresponding segmentation results. We add to each mesh vertex a white Gaussian noise with the mean value equal to zero and the standard deviation sigma = 0:0%; 0:2%; 0:5%; 1:0% of the length of the diagonal of bounding box respectively. Using a same set of parameter values, SEG-MAT is able to produce almost consistent segmentation results. 
-                    </td>
-                </tr>
-				<tr>
-                    <td><img src="src\anti_noise.png" width="70%" /></td>
-                </tr>
-				<tr>
-                    <td align="center" style="font-size:75%">
-                        Fig. 6. More segmentation results of shapes with significant noise, while SEG-MAT is still able to segment these shapes into meaningful parts.
-                    </td>
-                </tr>
 				<tr>
                     <td>
                         <br>
@@ -288,7 +256,7 @@
                     <td align="center">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td align="center" style="font-size:80%">&copy;Changjian Li. Last update: October, 2020.</td>
+                    <td align="center" style="font-size:80%">&copy;Changjian Li. Last update: June, 2021.</td>
                 </tr>
             </table>
         </div>
