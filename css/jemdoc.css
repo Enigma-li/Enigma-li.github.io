@@ -24,7 +24,7 @@ body {
 	padding-right: 50px;
 	padding-top: 10px;
 	padding-bottom: 20px;
-	max-width: 950px;
+	max-width: 1050px;
 }
 
 #layout-menu {
@@ -419,4 +419,60 @@ strong{
 pt{
 	font-weight: bold;
 	color: #08529b;
+}
+
+
+.header-style {
+    background-color: #949090; /* Background color of the navigation bar */
+    color: #000000; /* Text color */
+}
+
+.navbar-container {
+    display: flex; /* Use flexbox to center-align the navigation bar */
+    justify-content: center; /* Horizontally center-align the content */
+    background-color: #b3b3b3; /* Background color of the navigation bar */
+    color: #000000; /* Text color */
+}
+
+nav ul {
+    list-style-type: none; /* Remove bullet points from the list */
+    padding: 0;
+}
+
+nav li {
+    display: inline; /* Display list items horizontally */
+    margin-right: 20px; /* Add space between list items */
+}
+
+nav a {
+    text-decoration: none; /* Remove underline from links */
+    color: #000000; /* Link text color */
+}
+
+/* Style for the dot */
+.dot {
+	font-size: 24px; /* Adjust the font size to change the dot's size */
+	color: rgb(0, 0, 0); /* Change the dot's color if needed */
+}
+
+
+/* Style for the scrollable news container */
+.news-container {
+	max-height: 150px; /* Set the maximum height of the container */
+	overflow-y: auto; /* Enable vertical scrolling with auto-hide */
+	padding: 10px; /* Add some padding for content spacing */
+}
+
+/* Style for the scrollable content */
+.scrollable-content {
+	padding-right: 20px; /* Add right padding to account for hidden scrollbar space */
+}
+
+/* Hide the scrollbar */
+.news-container::-webkit-scrollbar {
+	width: 0.5em;
+}
+
+.news-container::-webkit-scrollbar-thumb {
+	background-color: #d8d7d7;
 }
