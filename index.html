@@ -7,6 +7,8 @@
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 	
     <link rel="stylesheet" href="./css/jemdoc.css" type="text/css">
+    <link rel="stylesheet" href="./css/style.css" />
+
     <style type="text/css">
 	</style>
     <title>Changjian Li - Homepage</title>
@@ -17,31 +19,34 @@
     <link rel="manifest" href="./avatar/icon/manifest.json">
     <link rel="mask-icon" href="./avatar/icon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="theme-color" content="#ffffff">
+
+
+    <script src="./scripts/scroll.js"></script>
 </head>
 
 <body>
 
     <!-- Navigation Bar -->
-    <!-- <div class="navbar-container">
-        <header>
-            <nav>
+    <div class="navbar-container">
+        <nav>
+            <div>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#biography">Biography</a></li>
-                    <li><a href="#news">News</a></li>
-                    <li><a href="#publication">Publication</a></li>
-                    <li><a href="#biography">Teaching</a></li>
-                    <li><a href="#service">Service</a></li>
+                    <li><a onclick="scrollToSection('home')">Home</a></li>
+                    <li><a onclick="scrollToSection('biography')">Biography</a></li>
+                    <li><a onclick="scrollToSection('news')">News</a></li>
+                    <li><a onclick="scrollToSection('publication')">Publication</a></li>
+                    <li><a onclick="scrollToSection('team')">Team</a></li>
+                    <li><a onclick="scrollToSection('teaching')">Teaching</a></li>
+                    <li><a onclick="scrollToSection('service')">Service</a></li>
                 </ul>
-            </nav>
-        </header>
-    </div> -->
+            </div>
+        </nav>
+    </div>
 
     <!-- Overall layout control -->
     <div id="layout-content" style="margin-top: 25px">
-
         <!-- Figure, Name, Addree, Email, CV, etc. -->
-        <table>
+        <table id="home" class="home">
             <tbody>
                 <tr>
                     <td width="19%" valign="top" height="173">
@@ -79,7 +84,7 @@
         </table>
 
         <!-- Biography -->
-        <h2>Biography</h2>
+        <h2 id="biography">Biography</h2>
         <p style="text-align: justify;">
             I am an Assistant Professor in the School of Informatics at the University of Edinburgh. I have a board range of research interests in <strong>3D Shape Creation and Analysis</strong> with applications in Sketch-based Modeling, Shape Reconstruction and Analysis from Point Clouds, and Medical Image Processing and Modeling. For sketch-based modeling (my representative line of research), we have recently developed two systems for easier CAD modeling by combining the advanced neural network and traditional optimization, where we translate intuitive sketches into CAD programs that greatly facilitate the downstream applications. 
         </p>
@@ -91,7 +96,7 @@
         </p>
 
         <!-- News -->
-        <h2>News</h2>
+        <h2 id="news">News</h2>
         <div class="news-container">
             <div class="scrollable-content">
                 <span class="dot">&#8226;</span> 10/11, 2023: We have one paper accepted to TVCG for point cloud upsampling, congratulation to Guangshung, and others. <br>
@@ -103,7 +108,7 @@
         </div>
 
         <!-- Publication -->
-        <h2>Publications</h2>
+        <h2 id="publication">Publications</h2>
         # Corresponding author; * Equal contribution
         <table border="0" width="100%">
             <tbody>
@@ -550,7 +555,7 @@
 
 		
         <!-- Team -->
-        <h2>Team</h2>
+        <h2 id="team">Team</h2>
         <h3>Current Students and Postdocs</h3>
         <table>
             <tbody>
@@ -570,7 +575,7 @@
         <!-- <h3>Former Group Memembers</h3> -->
 
         <!-- Teaching -->
-        <h2>Teaching</h2>
+        <h2 id="teaching">Teaching</h2>
             <table id="tbTeaching" border="0" width="100%">
                 <tbody>
                     <tr>
@@ -748,7 +753,7 @@
         </table>
         
         <!-- Program Committees -->
-        <h2>Conference Program Committees</h2>
+        <h2 id="service">Conference Program Committees</h2>
         <table id="tbCommittees" border="0" width="100%">
             <tbody>
                 <tr>
