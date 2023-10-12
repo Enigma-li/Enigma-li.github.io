@@ -20,6 +20,8 @@ body {
 	margin-bottom: 20px;
 	margin-left: auto;
 	margin-right: auto;
+	padding-left: 50px;
+	padding-right: 50px;
 	padding-top: 10px;
 	padding-bottom: 20px;
 	max-width: 1050px;
@@ -461,7 +463,7 @@ pt{
 			left: 0;
             width: 100%; /* Full width */
 			z-index: 100;
-			cursor: pointer;
+			font-size: 20px;
 }
 
 ul {
@@ -474,4 +476,10 @@ li {
 
 .home {
 	margin-top: 60px;
+}
+
+.clickable-area {
+	display: inline-block; /* Turn it into a block-level element */
+	padding: 10px; /* Add padding to create a larger clickable area */
+	cursor: pointer; /* Optional: Change cursor on hover to indicate it's clickable */
 }
