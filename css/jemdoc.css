@@ -421,34 +421,6 @@ pt{
 	color: #08529b;
 }
 
-
-.header-style {
-    background-color: #949090; /* Background color of the navigation bar */
-    color: #000000; /* Text color */
-}
-
-.navbar-container {
-    display: flex; /* Use flexbox to center-align the navigation bar */
-    justify-content: center; /* Horizontally center-align the content */
-    background-color: #b3b3b3; /* Background color of the navigation bar */
-    color: #000000; /* Text color */
-}
-
-nav ul {
-    list-style-type: none; /* Remove bullet points from the list */
-    padding: 0;
-}
-
-nav li {
-    display: inline; /* Display list items horizontally */
-    margin-right: 20px; /* Add space between list items */
-}
-
-nav a {
-    text-decoration: none; /* Remove underline from links */
-    color: #000000; /* Link text color */
-}
-
 /* Style for the dot */
 .dot {
 	font-size: 24px; /* Adjust the font size to change the dot's size */
