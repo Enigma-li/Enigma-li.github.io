@@ -486,8 +486,22 @@ li {
 
 .roundImg {
 	/* overflow: hidden; */
-	width: 210px;
-	height: 210px;
+	width: auto;
+	height: 200px;
 	border-radius: 18%;
 	vertical-align: middle;
+}
+
+.content-table td {
+    vertical-align: top; /* Align cell content to the top */
+    padding: 10px; /* Add padding to space out cell content */
+    text-align: justify; /* Spread cell content evenly */
+    width: 25%; /* Set the width of each cell (4 cells = 100% width) */
+}
+
+.table-container {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 0;
+	margin-top: 20px;
 }
