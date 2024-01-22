@@ -431,7 +431,7 @@ pt{
 
 /* Style for the scrollable news container */
 .news-container {
-	max-height: 150px; /* Set the maximum height of the container */
+	max-height: 180px; /* Set the maximum height of the container */
 	overflow-y: auto; /* Enable vertical scrolling with auto-hide */
 	padding: 10px; /* Add some padding for content spacing */
 }
