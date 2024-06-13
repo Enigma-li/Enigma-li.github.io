@@ -1,0 +1,7 @@
+@inproceedings{wang2024contextseg,
+  title={ContextSeg: Sketch Semantic Segmentation by Querying the Context with Attention},
+  author={Wang, Jiawei and Li, Changjian},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={3679--3688},
+  year={2024}
+}
