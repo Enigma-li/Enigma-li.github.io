@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- TemplateBeginEditable name="doctitle" -->
-    <title>ContextSeg: Sketch Semantic Segmentation by Querying the Context with Attention</title>
+    <title>VQ-SGen: A Vector Quantized Stroke Representation for Creative Sketch Generation</title>
     <!-- TemplateEndEditable -->
     <!-- TemplateBeginEditable name="head" -->
     <!-- TemplateEndEditable -->
@@ -155,53 +155,49 @@
         <div class="content">
             <table width="80%" align="center" cellspacing="10">
                 <tr>
-                    <td align="center" style="font-size:120%"><strong>ContextSeg: Sketch Semantic Segmentation by Querying the Context with Attention</strong></td>
+                    <td align="center" style="font-size:120%"><strong>VQ-SGen: A Vector Quantized Stroke Representation for <br> Creative Sketch Generation</strong></td>
                 </tr>
                 <tr>
-                   <td align="center" style="font-size:100%"><a href="https://jiawei22.github.io/" target="_blank">Jiawei Wang</a><font size="2"><sup>1</sup></font>,&nbsp&nbsp <a href="https://enigma-li.github.io/" target="_blank">Changjian Li</a><font size="2"><sup>2</sup></font></td>
+                   <td align="center" style="font-size:100%"><a href="https://jiawei22.github.io/" target="_blank">Jiawei Wang</a><font size="2"><sup>1,2</sup></font>,&nbsp&nbsp <a href="https://shanghaitech-impact.github.io/" target="_blank">Zhiming Cui</a><font size="2"><sup>2</sup></font>,&nbsp&nbsp <a href="https://enigma-li.github.io/" target="_blank">Changjian Li</a><font size="2"><sup>1</sup></font></td>
                 </tr>
-					<td align="center" style="font-size:90%"><font size="2"><sup>1</sup></font>Shandong University &nbsp&nbsp <font size="2"><sup>2</sup></font>University of Edinburgh</td>
+					<td align="center" style="font-size:90%"><font size="2"><sup>1</sup></font>University of Edinburgh &nbsp&nbsp <font size="2"><sup>2</sup></font>ShanghaiTech University</td>
                 <tr>
-                    <td align="center" style="font-size:110%"><font color="red"><strong>CVPR 2024</strong></font></td>
+                    <!-- <td align="center" style="font-size:110%"><font color="red"><strong>arXiv 2025</strong></font></td> -->
+                     <td align="center" style="font-size:100%">arXiv 2025</font></td>
                 </tr>
 
                 <tr>
-                    <td align="center"><img src="src\teaser.png" width="80%" alt="Paper teaser" /></td>
+                    <td align="center"><img src="src\teaser.jpg" width="60%" alt="Paper teaser" /></td>
                 </tr>
                 <tr>
                     <td align="justify" style="font-size:80%">
-                        Fig. 1. Given an input sketch, semantic segmentation is to assign
-                        labels to strokes based on their semantics so as to form semantic
-                        groups. Our method is robust to stroke variations achieving
-                        superior results (e.g., the correctly labeled airplane windows).
+                        Fig. 1. The goal of creative sketch generation is to generate vivid sketches, 
+                        e.g., the birds from existing methods on the left. We have proposed VQ-SGen, for high-quality 
+                        sketch generation with a new vector-quantized (VQ) representation and an efficient generator. 
+                        See one of our results on the right for comparison.
                     </td>
                 </tr>
                 <!-- Video Presentation -->
-                <tr>
+                <!-- <tr>
                     <td align="center" style="font-size:100%"><strong>Presentation</strong></td>
                 </tr>
                 <tr align="center">
                     <td>
                         <iframe width="750" height="422" src="https://www.youtube.com/embed/k_yq-Y7YAVk?si=SnCP07a41807V2YL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </td>
-                </tr>
+                </tr> -->
+                <!-- Abstract -->
                 <tr>
                     <td align="left" style="font-size:100%"><strong>Abstract</strong></td>
                 </tr>
                 <tr>
                     <td align="justify" style="font-size:80%">
-                        Sketch semantic segmentation is a well-explored and pivotal problem in computer vision involving the assignment 
-                        of pre-defined part labels to individual strokes. 
-                        This paper presents ContextSeg -- a simple yet highly effective approach to tackling this problem with two stages.
-                        In the first stage, to better encode the shape and positional information of strokes, we propose to predict an extra 
-                        dense distance field in an autoencoder network to reinforce structural information learning. 
-                        In the second stage, we treat an entire stroke as a single entity and label a group of strokes within the same semantic 
-                        part using an auto-regressive Transformer with the default attention mechanism. 
-                        By group-based labeling, our method can fully leverage the context information when making decisions for the remaining groups of strokes.
-                        Our method achieves the best segmentation accuracy compared with state-of-the-art approaches on two representative 
-                        datasets and has been extensively evaluated demonstrating its superior performance.
-                        Additionally, we offer insights into solving part imbalance in training data and the preliminary experiment on 
-                        cross-category training, which can inspire future research in this field.
+                        This paper presents VQ-SGen, a novel algorithm for high-quality creative sketch generation.
+                        Recent approaches have framed the task as pixel-based generation either as a whole or part-by-part, neglecting the intrinsic and contextual relationships among individual strokes, such as the shape and spatial positioning of both proximal and distant strokes.
+                        To overcome these limitations, we propose treating each stroke within a sketch as an entity and introducing a vector-quantized (VQ) stroke representation for fine-grained sketch generation.
+                        Our method follows a two-stage framework - in stage one, we decouple each stroke's shape and location information to ensure the VQ representation prioritizes stroke shape learning. In stage two, we feed the precise and compact representation into an auto-decoding Transformer to incorporate stroke semantics, positions, and shapes into the generation process. 
+                        By utilizing tokenized stroke representation, our approach generates strokes with high fidelity and facilitates novel applications, such as text or class label conditioned generation and sketch completion. %\sout{and semantic-aware stroke editing.}
+                        Comprehensive experiments demonstrate our method surpasses existing state-of-the-art techniques on the CreativeSketch dataset, underscoring its effectiveness.
                     </td>
                 </tr>
                 <tr align="left">
@@ -211,10 +207,18 @@
                                 <td><img src="src\paper_thumbnail.jpg" width="210" /></td>
                                 <td>&nbsp;</td>
                                 <td style="font-size:75%">
-									<strong>Paper</strong> [<a href="https://arxiv.org/abs/2311.16682" target="_blank">ArXiv</a>]<br/>
-                                    <strong>Code and Data</strong> [<a href="https://github.com/JiaWei22/ContextSeg" target="_blank">GitHub</a>]<br/>
-                                    <strong>Poster</strong> [<a href="src\poster.png" target="_blank">Poster</a>]<br/>
-									<strong>Citation:</strong><br>Wang, Jiawei, and Changjian Li. "ContextSeg: Sketch Semantic Segmentation by Querying the Context with Attention." In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 3679-3688. 2024.&nbsp;<a href="./contextSeg.txt" target="_blank">(bibtex)</a><br/>
+									<strong>Paper</strong> [<a href="https://arxiv.org/abs/2411.16446" target="_blank">ArXiv</a>]<br/>
+                                    <strong>Code and Data</strong> [<a href="" target="_blank">GitHub [Coming soon]</a>]<br/>
+                                    <!-- <strong>Poster</strong> [<a href="src\poster.png" target="_blank">Poster</a>]<br/> -->
+									<strong>Citation:</strong>
+                                    <pre>
+@article{wang2025vq,
+    title={VQ-SGen: A Vector Quantized Stroke Representation for Creative Sketch Generation},
+    author={Wang, Jiawei and Cui, Zhiming and Li, Changjian},
+    journal={arXiv preprint arXiv:2411.16446},
+    year={2025}
+}
+                                    </pre>
                                 </td>
                             </tr>
                         </table>
@@ -229,14 +233,13 @@
                     <td align="left" style="font-size:100%"><strong>Algorithm</strong></td>
                 </tr>
                 <tr>
-                    <td><img src="src\pipeline.png" width="95%" /></td>
+                    <td><img src="src/pipeline.jpg" width="95%" /></td>
                 </tr>
 				<tr>
                     <td align="justify" style="font-size:75%">
-                        Fig. 2. Overview of ContextSeg. Given an input sketch, it is first divided into a sequence of strokes, which are used to train our
-                        stroke embedding network – an autoencoder with an extra distance field output (Sec. 3.1). Then, the learned embeddings are sent to
-                        the segmentation Transformer operating in an auto-regressive manner (Sec. 3.2). The Transformer leverages contextual information,
-                        encompassing previously labeled strokes and remaining strokes, as input for the current step’s stroke labeling.
+                        Fig. 2. Overview of VQ-SGen. Given an input sketch, it is first divided into a sequence of strokes. 
+                        In the first stage, we begin by decoupling the shape and location information of each stroke and obtain their discrete representations (Sec. 3.1). 
+                        In the second stage, we use a decoder-only Gen-Transformer to predict the stroke image, label, and position in an autoregressive manner (Sec. 3.2). 
                     </td>
                 </tr>
                 <tr>
@@ -246,28 +249,36 @@
                     <td align="left" style="font-size:90%"><strong>Result Gallery</strong></td>
                 </tr>
                 <tr>
-                    <td><img src="src\main_results.png" width="100%" /></td>
+                    <td><img src="src\main_result.jpg" width="100%" /></td>
                 </tr>
 				<tr>
                     <td align="center" style="font-size:75%">
-                        Fig. 3. Visual comparison with three competitors on the SPG and the CreativeSketch datasets.
+                        Fig. 3. Visual comparison against competitors on both the Creative Birds and Creative Creatures datasets.
                     </td>
                 </tr>
 				<tr>
-                    <td align="left" style="font-size:90%"><strong>Statistical Comparison</strong></td>
+                    <td align="left" style="font-size:90%"><strong>Applications</strong></td>
                 </tr>
                 <tr>
-                    <td><img src="src\main_stats.png" width="100%" /></td>
-                </tr>
-				<tr>
-                    <td align="left" style="font-size:90%"><strong>Stroke Embedding Evaluation</strong></td>
-                </tr>
-                <tr>
-                    <td><img src="src\embedding.png" width="90%" /></td>
+                    <td><img src="src/conditional_generation_img.jpg" width="100%" /></td>
                 </tr>
 				<tr>
                     <td align="center" style="font-size:75%">
-                        Fig. 4. Sketch reconstruction results of our ablation study on different stroke embedding networks.
+                        Fig. 4. Applications of our approach. 
+                        (a) Given the class label, our method can produce corresponding sketches with rich variations. 
+                        (b) Our method supports text-conditioned generation, the resulting sketches explain the input text vividly. 
+                        (c) Given the initial stroke, our method can complete the whole sketch, which is favorable against competitors.
+                    </td>
+                </tr>
+				<tr>
+                    <td align="left" style="font-size:90%"><strong>Coodbook Visualization</strong></td>
+                </tr>
+                <tr>
+                    <td><img src="src/code_vis.jpg" width="50%" /></td>
+                </tr>
+				<tr>
+                    <td align="center" style="font-size:75%">
+                        Fig. 5. UMAP visualization of the shape codes, with the overlaid strokes indicating the semantic aware clustering in the discrete code space.
                     </td>
                 </tr>
 				<tr>
@@ -279,7 +290,7 @@
                     <td align="center">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td align="center" style="font-size:80%">&copy;Changjian Li. Last update: June, 2024.</td>
+                    <td align="center" style="font-size:80%">&copy;Changjian Li. Last update: March, 2025.</td>
                 </tr>
             </table>
         </div>
