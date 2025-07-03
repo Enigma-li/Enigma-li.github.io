@@ -1,6 +1,6 @@
 @article{wang2025vq,
   title={VQ-SGen: A Vector Quantized Stroke Representation for Creative Sketch Generation},
   author={Wang, Jiawei and Cui, Zhiming and Li, Changjian},
-  journal={arXiv preprint arXiv:2411.16446},
+  journal={International Conference on Computer Vision (ICCV)},
   year={2025}
 }
