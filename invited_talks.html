@@ -113,12 +113,12 @@
         max-width: 100%;
         height: auto;
       }
-      .workshop-link {
-        display: inline-block;
-        margin-top: 8px;
-        font-weight: bold;
+      .talk-teaser {
+        display: block;
+        max-width: 100%;
+        height: auto;
       }
-      .paper-link {
+      .workshop-link {
         display: inline-block;
         margin-top: 8px;
         font-weight: bold;
@@ -207,11 +207,12 @@
                 </figure>
               </td>
               <td class="talk-video">
+                <a href="https://dl.acm.org/doi/pdf/10.1145/3811392" target="_blank" rel="noopener noreferrer">
+                  <img class="talk-teaser" width="550" src="./talks/Weirui_Wang/teaser.jpg" alt="ACT paper teaser showing rigged characters with varied topologies">
+                </a>
                 <div class="video-caption">
                   <strong>Date and time</strong>: 11am, August 2026<br>
                   <strong>Abstraction</strong>: ACT unifies rigging, skinning, and motion generation by modeling skeletal topology and temporal motion in a shared latent space. A vision-language model provides semantic topology priors to a Diffusion Transformer, enabling zero-shot rigging, text-guided animation, and motion completion in one pipeline. A geometry-guided decoder couples kinematics with surface deformation, allowing the method to generalize to diverse, non-humanoid characters without retraining.
-                  <br>
-                  <a class="paper-link" href="https://dl.acm.org/doi/pdf/10.1145/3811392" target="_blank" rel="noopener noreferrer">View the paper →</a>
                 </div>
               </td>
             </tr>
@@ -226,7 +227,7 @@
               <col style="width: auto;">
             </colgroup>
             <tr>
-              <td class="talk-header" colspan="2">Title: Beyond CAD — Geometry, Learning, and Shape Modeling</td>
+              <td class="talk-header" colspan="2">Workshop: Beyond CAD — Geometry, Learning, and Shape Modeling</td>
             </tr>
             <tr>
               <td class="talk-image">
