@@ -2,6 +2,7 @@
 <head>
     <!--meta data-->
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="Changjian Li, Changjian, Invited Talks, Changjian Li - Homepage, University of Edinburgh, Schoole of Informatics, IPAB, Institute of Perception, Action and Behaviour (IPAB), Institute of Perception, Action and Behaviour">
   <meta name="description" content="GraphVix Invited Talks">
 	
@@ -74,6 +75,12 @@
         height: 315px;
         border: none;
       }
+      .talk-video > img,
+      .talk-video > video {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
       .video-caption {
         margin-top: 10px;
         font-size: 1.0em;
@@ -96,9 +103,60 @@
           line-height: 1.6;
           color: #333;
         }
+      .talk-figure img.workshop-speaker-mosaic {
+        width: 400px;
+        max-width: 100%;
+        border: 0;
+      }
+      .workshop-banner {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      .talk-teaser {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      .workshop-link {
+        display: inline-block;
+        margin-top: 8px;
+        font-weight: bold;
+      }
+
       @media (max-width: 768px) {
+        body {
+          padding-right: 18px;
+          padding-left: 18px;
+        }
+        #layout-content {
+          padding-right: 0;
+          padding-left: 0;
+        }
         .talk-content {
           flex-direction: column;
+        }
+        .talk-table,
+        .talk-table tbody,
+        .talk-table tr,
+        .talk-table td {
+          display: block;
+          width: 100%;
+          box-sizing: border-box;
+        }
+        .talk-table colgroup {
+          display: none;
+        }
+        .talk-table td:first-child {
+          width: 100%;
+          border-right: 0;
+          border-bottom: 1px solid #ececec;
+        }
+        .talk-table td:last-child {
+          border-left: 0;
+        }
+        .talk-video {
+          padding: 14px;
         }
       }
   </style>
@@ -126,6 +184,76 @@
               Welcome to GraphVix invited talks. We will regularly invite experts in Computer Graphics, Computer Vision, and Artificial Intelligence fields to share their fantastic work. We will try to livestream the talk at Youtube.
             </p>
         </section>
+
+        <!-- Talk 7: Weirui Wang -->
+        <div class="talk-section">
+          <table class="talk-table">
+            <colgroup>
+              <col style="width: 120px;">
+              <col style="width: auto;">
+            </colgroup>
+            <tr>
+              <td class="talk-header" colspan="2">Title: ACT: A Unified Framework for Rigging and Animating Characters with Arbitrary Topologies</td>
+            </tr>
+            <tr>
+              <td class="talk-image">
+                <figure class="talk-figure">
+                  <img width="200" src="./talks/Weirui_Wang/photo.jpg" alt="Weirui Wang at SIGGRAPH 2026">
+                  <figcaption>
+                    <strong>Mr. Weirui Wang</strong><br>
+                    ShanghaiTech University<br>
+                    Deemos Technology
+                  </figcaption>
+                </figure>
+              </td>
+              <td class="talk-video">
+                <a href="https://dl.acm.org/doi/pdf/10.1145/3811392" target="_blank" rel="noopener noreferrer">
+                  <img class="talk-teaser" width="550" src="./talks/Weirui_Wang/teaser.jpg" alt="ACT paper teaser showing rigged characters with varied topologies">
+                </a>
+                <div class="video-caption">
+                  <strong>Date and time</strong>: 11am, August 13, 2026<br>
+                  <strong>Abstraction</strong>: ACT unifies rigging, skinning, and motion generation by modeling skeletal topology and temporal motion in a shared latent space. A vision-language model provides semantic topology priors to a Diffusion Transformer, enabling zero-shot rigging, text-guided animation, and motion completion in one pipeline. A geometry-guided decoder couples kinematics with surface deformation, allowing the method to generalize to diverse, non-humanoid characters without retraining.
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Workshop: Beyond CAD -->
+        <div class="talk-section">
+          <table class="talk-table">
+            <colgroup>
+              <col style="width: 120px;">
+              <col style="width: auto;">
+            </colgroup>
+            <tr>
+              <td class="talk-header" colspan="2">Workshop: Beyond CAD — Geometry, Learning, and Shape Modeling</td>
+            </tr>
+            <tr>
+              <td class="talk-image">
+                <figure class="talk-figure">
+                  <img class="workshop-speaker-mosaic" width="400" src="./talks/BeyondCAD/speaker-mosaic.png" alt="Portrait collage of the Beyond CAD invited speakers">
+                  <figcaption>
+                    <strong>Beyond CAD Invited Speakers</strong><br>
+                    International Workshop
+                  </figcaption>
+                </figure>
+              </td>
+              <td class="talk-video">
+                <a href="https://enigma-li.github.io/beyondcad-edinburgh/" target="_blank" rel="noopener noreferrer">
+                  <img class="workshop-banner" width="550" src="./talks/BeyondCAD/workshop-banner.jpg" alt="Beyond CAD workshop, 8 July 2026 in Edinburgh">
+                </a>
+                <div class="video-caption">
+                  <strong>Date and time</strong>: 9am–5pm, July 8, 2026<br>
+                  <strong>Place</strong>: G.07, Informatics Forum, University of Edinburgh<br>
+                  <strong>Abstraction</strong>: This workshop brings together leading researchers across graphics, geometry, and AI to explore the next generation of shape modeling—from neural representations to human–AI co-creation and next-generation CAD systems.
+                  <br>
+                  <a class="workshop-link" href="https://enigma-li.github.io/beyondcad-edinburgh/" target="_blank" rel="noopener noreferrer">Visit the workshop webpage →</a>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
       
         <!-- Talk 6: Shuyuan Zhang -->
         <div class="talk-section">
@@ -372,7 +500,7 @@
 
     <br>
     <div align="center">
-        <b>&copy;Changjian Li.</b>&nbsp; Last update: April, 2026.
+        <b>&copy;Changjian Li.</b>&nbsp; Last update: July, 2026.
     </div
 
 </body>
